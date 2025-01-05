@@ -1,0 +1,153 @@
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    min-height: 70vh; /* Adjusts height for better fit */
+    background: rgba(255, 255, 255, 0.9); /* Subtle translucent background */
+    border-radius: 15px; /* Adds smooth corners to the container */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+    padding: 20px; /* Adds spacing inside the container */
+    width: 90%; /* Ensures proper responsiveness */
+    max-width: 800px; /* Prevents it from getting too wide on large screens */
+  }
+  
+  #Map {
+    width: 100%; /* Makes it responsive */
+    max-width: 500px; /* Limits width to a reasonable size */
+    height: 500px; /* Keeps the map square */
+     /* Default map */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px; /* Slightly rounder corners for a modern look */
+    border: 2px solid #f2a6b5; /* Soft colored border to match the theme */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow to the map */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+  }
+  
+  #Map:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  .header {
+    background: #b45e47;
+    color: white;
+    padding: 15px 0 0 10px;
+    height: 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header h1 {
+    margin: 0;
+    color: white;
+  }
+
+  .pannel {
+    background-color: #f2a6b5f7;
+    height: 80px;
+    padding-left: 10px;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  .pannel-opt a {
+    padding: 8px 9px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .pannel-opt a:hover {
+    background: #ff758c;
+    color: white;
+  }
+
+  /* Main Section */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+
+  #Map {
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  #map-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown {
+    margin-bottom: 20px;
+  }
+
+  .styled-select {
+    font-size: 18px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .styled-select:hover {
+    background-color: #f2a6b5;
+    color: white;
+  }
+
+  .contact-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+
+  .contact-container h3 {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #b45e47;
+    color: white;
+    position: relative;
+  }

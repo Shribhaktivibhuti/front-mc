@@ -1,0 +1,301 @@
+/* General Styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: white; /* Set to white */
+  color: #333;
+}
+
+.header {
+  background: #b45e47;/*linear-gradient(to right, #e1989f, #b45e47);*/
+  color: white;
+  padding: 15px 0 0 10px;
+  height: 3rem;
+  position: sticky; /* Makes header sticky */
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.pannel {
+  background-color: #f2a6b5f7;
+  height: 80px;
+  padding-left: 10px;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.pannel-opt a {
+  padding: 8px 9px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.pannel-opt a:hover {
+  background: #ff758c;
+  color: white;
+}
+
+.pannel-opt {
+  width: 65%;
+  display: flex;
+  margin-left: 5px;
+}
+
+.styled-select {
+  font-size: 20px;
+  color: gray;
+}
+
+.styled-select option {
+  color: black;
+}
+
+.styled-select:invalid {
+  color: gray;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  min-height: 80vh; /* Ensures the container takes up sufficient vertical space */
+}
+
+#Map {
+  width: 500px; /* Increased width */
+  height: 500px; /* Increased height */
+  /*background-image: url('dharwad-taluka-map.jpg'); */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+figure {
+  position: relative;
+  left: 0;
+  width: 400%;
+  animation: 20s slide infinite;
+  display: flex;
+}
+/* Slider */
+.slider {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+figure {
+  position: relative;
+  left: 0;
+  width: 400%;
+  animation: 10s slide infinite;
+  display: flex;
+}
+
+.slide {
+  width: 25%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes slide {
+  0%, 10% {
+    left: 0;
+  }
+  20%, 30% {
+    left: -100%;
+  }
+  40%, 50% {
+    left: -200%;
+  }
+  60%, 70% {
+    left: -300%;
+  }
+  80%, 100% {
+    left: 0;
+  }
+}
+
+/* Popup Cards */
+.popup-block {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 10px;
+}
+
+.circle-card {
+  background: linear-gradient(to right, #e1989f 50%, #b45e47 50%);
+  color: white;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Ensures text is centered inside */
+}
+
+.circle-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.circle-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.circle-card button {
+  margin-top: 15px; /* Adds space between text and button */
+  padding: 8px 15px;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.circle-card button:hover {
+  background: #feb47b;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #d96c77e9;
+  color: white;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #feb47b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pannel-opt {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .popup-block {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .slider {
+    height: 300px;
+  }
+  .slide img {
+    height: 300px;
+  }
+}
+/* Login Page Styles */
+.login-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #f2f2f2;
+}
+
+.login-card {
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 400px;
+}
+
+.login-card h2 {
+margin-bottom: 20px;
+font-size: 24px;
+}
+
+.login-card label {
+display: block;
+text-align: left;
+margin: 10px 0 5px;
+font-size: 14px;
+font-weight: bold;
+}
+
+.login-card input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 14px;
+}
+
+.submit-btn {
+width: 100%;
+padding: 10px;
+background-color: #b45e47;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+background-color: #a24c3a;
+}
