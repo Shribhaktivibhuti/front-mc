@@ -1,14 +1,11 @@
-import React from "react";
-import '../styles/style2.css';
-
+import React, { useState } from "react";
+import "../styles/style2.css";
 
 const PreMarital = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
   const toggleDropdown = (id) => {
-    const content = document.getElementById(id);
-    if (content) {
-      content.style.display =
-        content.style.display === "block" ? "none" : "block";
-    }
+    setActiveDropdown((prevId) => (prevId === id ? null : id));
   };
 
   return (
@@ -30,7 +27,9 @@ const PreMarital = () => {
       </header>
 
       <h1 className="h1">Pre-Marital Counseling</h1>
-      <p className="p">Your first step towards a strong and sustainable marriage.</p>
+      <p className="p">
+        Your first step towards a strong and sustainable marriage.
+      </p>
 
       <main className="container">
         <section className="content-box">
@@ -59,6 +58,7 @@ const PreMarital = () => {
               expectations and avoid surprises later in life.
             </li>
           </ul>
+
           <div className="header">
             <h1>Small Things Often</h1>
           </div>
@@ -71,6 +71,7 @@ const PreMarital = () => {
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
+                title="Pre-Marital Counseling Podcast"
               ></iframe>
             </div>
           </div>
@@ -83,10 +84,17 @@ const PreMarital = () => {
               <button
                 className="dropdown-btn"
                 onClick={() => toggleDropdown("physical-intimacy")}
+                aria-expanded={activeDropdown === "physical-intimacy"}
+                aria-controls="physical-intimacy"
               >
                 Physical and Emotional Intimacy
               </button>
-              <div className="dropdown-content" id="physical-intimacy">
+              <div
+                className={`dropdown-content ${
+                  activeDropdown === "physical-intimacy" ? "show" : ""
+                }`}
+                id="physical-intimacy"
+              >
                 <h3>How to Build Intimacy in Relationships</h3>
                 <p>
                   No matter how long you have been together, it's always
@@ -139,7 +147,7 @@ const PreMarital = () => {
                 </ul>
               </div>
             </li>
-            {/* Additional dropdowns (Positive Attitude, Accountability, Recognition, Givers Gain, Roles, Goals, and Life Dreams) go here following the same structure */}
+            {/* Add additional dropdowns (Positive Attitude, Accountability, etc.) in a similar way */}
           </ul>
         </section>
       </main>

@@ -1,13 +1,11 @@
-import React from 'react';
-import '../styles/style2.css';
-
+import React, { useState } from "react";
+import "../styles/style2.css";
 
 const PostSeparation = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
   const toggleDropdown = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.style.display = element.style.display === 'block' ? 'none' : 'block';
-    }
+    setActiveDropdown((prevId) => (prevId === id ? null : id));
   };
 
   return (
@@ -35,15 +33,35 @@ const PostSeparation = () => {
         <section className="content-box">
           <h2>What is Post-Separation Counseling?</h2>
           <p>
-            Post-separation counseling provides therapeutic support and guidance to individuals and families after a separation or divorce. It aims to help navigate the emotional, psychological, and practical challenges that arise during this transition.
+            Post-separation counseling provides therapeutic support and guidance
+            to individuals and families after a separation or divorce. It aims
+            to help navigate the emotional, psychological, and practical
+            challenges that arise during this transition.
           </p>
           <h2>Key Objectives of Post-Separation Counseling:</h2>
           <ul>
-            <li><strong>Emotional adjustment:</strong> Support individuals in processing the emotional and psychological impact of separation.</li>
-            <li><strong>Co-parenting guidance:</strong> Help parents navigate co-parenting responsibilities and maintain a positive environment for children.</li>
-            <li><strong>Conflict resolution:</strong> Address and manage conflicts constructively to reduce stress and promote healing.</li>
-            <li><strong>Adaptation to life changes:</strong> Assist individuals in adjusting to significant life changes and establishing a new normal.</li>
-            <li><strong>Family support:</strong> Provide tools to help families move forward in a healthy and constructive way.</li>
+            <li>
+              <strong>Emotional adjustment:</strong> Support individuals in
+              processing the emotional and psychological impact of separation.
+            </li>
+            <li>
+              <strong>Co-parenting guidance:</strong> Help parents navigate
+              co-parenting responsibilities and maintain a positive environment
+              for children.
+            </li>
+            <li>
+              <strong>Conflict resolution:</strong> Address and manage conflicts
+              constructively to reduce stress and promote healing.
+            </li>
+            <li>
+              <strong>Adaptation to life changes:</strong> Assist individuals in
+              adjusting to significant life changes and establishing a new
+              normal.
+            </li>
+            <li>
+              <strong>Family support:</strong> Provide tools to help families
+              move forward in a healthy and constructive way.
+            </li>
           </ul>
         </section>
 
@@ -53,9 +71,9 @@ const PostSeparation = () => {
         <div className="main-container">
           <div className="audio-container" id="audioPlayer1">
             <iframe
-              style={{ borderRadius: '12px' }}
+              className="spotify-iframe"
               src="https://open.spotify.com/embed/episode/3VkwOGcHmIk42Y8pnPpfDg?utm_source=generator"
-              frameBorder="0"
+              title="Post Separation Counseling Audio"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
@@ -67,41 +85,72 @@ const PostSeparation = () => {
           <ul id="benefits-list">
             {[
               {
-                id: 'emotional-healing',
-                title: 'Emotional Healing and Support',
+                id: "emotional-healing",
+                title: "Emotional Healing and Support",
                 content: (
                   <>
-                    <h3>The Importance of Emotional Healing and Support in Relationships</h3>
+                    <h3>
+                      The Importance of Emotional Healing and Support in
+                      Relationships
+                    </h3>
                     <ul>
-                      <li>Emotional healing helps recover from past traumas, misunderstandings, or betrayals in romantic relationships.</li>
-                      <li>It focuses on rebuilding trust, intimacy, and connection between partners.</li>
-                      <li>Emotional healing is crucial for maintaining a healthy and enduring relationship through personal and relational challenges.</li>
+                      <li>
+                        Emotional healing helps recover from past traumas,
+                        misunderstandings, or betrayals in romantic
+                        relationships.
+                      </li>
+                      <li>
+                        It focuses on rebuilding trust, intimacy, and connection
+                        between partners.
+                      </li>
+                      <li>
+                        Emotional healing is crucial for maintaining a healthy
+                        and enduring relationship through personal and
+                        relational challenges.
+                      </li>
                     </ul>
-                    <h3>How to Improve Emotional Healing and Support in Relationships</h3>
+                    <h3>
+                      How to Improve Emotional Healing and Support in
+                      Relationships
+                    </h3>
                     {/* Add detailed lists for other sections similarly */}
                   </>
                 ),
               },
               {
-                id: 'co-parenting',
-                title: 'Co-parenting Skills',
+                id: "co-parenting",
+                title: "Co-parenting Skills",
                 content: (
                   <>
-                    <h3>The Importance of Co-parenting Skills in Relationships</h3>
+                    <h3>
+                      The Importance of Co-parenting Skills in Relationships
+                    </h3>
                     <ul>
-                      <li>Co-parenting is crucial after separation or divorce when children are involved.</li>
+                      <li>
+                        Co-parenting is crucial after separation or divorce when
+                        children are involved.
+                      </li>
                       {/* Continue content... */}
                     </ul>
                   </>
                 ),
               },
-              // Add other sections similarly
             ].map((item) => (
               <li key={item.id}>
-                <button className="dropdown-btn" onClick={() => toggleDropdown(item.id)}>
+                <button
+                  className="dropdown-btn"
+                  onClick={() => toggleDropdown(item.id)}
+                  aria-expanded={activeDropdown === item.id}
+                  aria-controls={item.id}
+                >
                   {item.title}
                 </button>
-                <div className="dropdown-content" id={item.id}>
+                <div
+                  className={`dropdown-content ${
+                    activeDropdown === item.id ? "show" : ""
+                  }`}
+                  id={item.id}
+                >
                   {item.content}
                 </div>
               </li>
